@@ -2,7 +2,7 @@
 
 Build idea from here:
 https://github.com/babel/example-node-server
-
+blah
 */
 
 import Koa from 'koa';
