@@ -4,13 +4,13 @@ Build idea from here:
 https://github.com/babel/example-node-server
 blah
 */
-
+import "babel-polyfill";
 import Koa from 'koa';
 
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import Home from './components/Home';
+import Home from '../components/Home';
 
 const app = new Koa();
 
