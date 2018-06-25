@@ -1,14 +1,14 @@
-import React from 'react';
-
-function App(){
+import React from "react";
 
 
-  return (
-    <Switch>
-      <Route path="/about" component={About}/>
-      <Route path="/dashboard" component={Dashboard}/>
-    </Switch>
-  )
+class App extends React.Component {
+  render () {
+    return (
+      <React.Fragment>
+        <p>I'm the App!</p>
+      </React.Fragment>
+    );
+  }
+};
 
-
-}
+export default App;
