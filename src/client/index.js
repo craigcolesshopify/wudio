@@ -1,14 +1,15 @@
 import React from 'react';
-import Home from '../components/Home';
+import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router
+} from 'react-router-dom'
 
-function App(){
-
-
-  return (
-    <Switch>
-      <Route path="/home" component={Home}/>
-    </Switch>
-  )
+import App from '../components/App/App';
 
 
-}
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('app')
+);
