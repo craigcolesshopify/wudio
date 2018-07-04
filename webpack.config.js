@@ -1,8 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 module.exports = {
-  entry: './src/client/index.js',
+  entry: {
+    path:'./src/client/index.js'
+  },
   output: {
-    path: path.resolve(__dirname, "src/public/assets/javascript")
+    path: path.resolve(__dirname, "src/public/assets/javascript"),
+    filename:'main.js'
   },
   module: {
     rules:[
@@ -14,8 +18,5 @@ module.exports = {
         }
       }
     ]
-  },
-  node: {
-    fs: 'empty'
   }
 }
