@@ -1,3 +1,8 @@
 # wudio
 ## react visual synth
 An exercise in creating a react / babel / koa / webpack app from scratch
+
+## Blog
+ ***July 3, 2018***
+
+Finally got the universal routing and rendering part complete after a little bit of "bad error message" stumbling, I realised I was missing the `<StaticRouter>` component on the Koa Server (where the app originally gets served from). Once I added this, it worked. The app in its current state is a super basic universal react app, using Koa.js for the server, with a webpack bundler. I also have a production build step to transpile all the ES6 modules, back to commonjs modules so the server components are all compatible with ES6 modules for development.
