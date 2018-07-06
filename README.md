@@ -3,6 +3,10 @@
 An exercise in creating a react / babel / koa / webpack app from scratch
 
 ## Blog
+***July 5, 2018***
+
+Created a knob component that resembles the Roland 909 drum machine knob design. I Was able to get this working with a render prop that sends the state from `<KnobPlate909 />` to a child `<Knob909 />` component and updates the transform style with: `transform:rotate(${rotationDeg * 4}deg)`. The rotationDeg value is based on the mouses Y coord procured from a mouse move event. It was interesting to see how React automatically scopes the mouse move event to each individual `<Knob909 />` component.
+
 ***July 4, 2018***
 
 Discovering [styled-components](https://www.styled-components.com/docs/api#primary) ... liking it, but feel it takes me a bit to get my head around it, because it is yet another new way of thinking about components, but it feels like I can get used to it. To learn it I built some basic components for the nav, and made sure I could pass children through etc.
