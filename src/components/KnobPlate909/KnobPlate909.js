@@ -30,8 +30,8 @@ class KnobPlate909 extends React.Component {
   render(){
     return (
       <KnobPlate909Styles onMouseMove={this.mouseMove.bind(this)}>
-        <KnobLevelPlateMark rotation={45} top={49} left={31}/>
-        <KnobLevelPlateMark rotation={125} top={49} left={71}/>
+        <KnobLevelPlateMark rotation={45} top={49} left={31} backgroundColor="#55627e" />
+        <KnobLevelPlateMark rotation={125} top={49} left={71} backgroundColor="#55627e" />
         {this.props.children(this.state)}
       </KnobPlate909Styles>
     );
