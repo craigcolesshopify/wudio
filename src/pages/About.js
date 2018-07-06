@@ -11,6 +11,11 @@ function About(){
           (state)=><Knob909 values={state} />
         }
       </KnobPlate909>
+      <KnobPlate909>
+        {
+          (state)=><Knob909 values={state} />
+        }
+      </KnobPlate909>
     </div>
   )
   
