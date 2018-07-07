@@ -3,6 +3,10 @@
 An exercise in creating a react / babel / koa / webpack app from scratch
 
 ## Blog
+***July 7, 2018***
+
+Added simple callback mechanism so that each synth component can control independant values in the **soon to be built** audio engine. This establishes a highly modular approach and separates the look and feel from the actual audio generation.
+
 ***July 5, 2018***
 
 Created a knob component that resembles the Roland 909 drum machine knob design. I Was able to get this working with a render prop that sends the state from `<KnobPlate909 />` to a child `<Knob909 />` component and updates the transform style with: `transform:rotate(${rotationDeg * 4}deg)`. The rotationDeg value is based on the mouses Y coord procured from a mouse move event. It was interesting to see how React automatically scopes the mouse move event to each individual `<Knob909 />` component.
