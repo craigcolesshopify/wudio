@@ -2,7 +2,7 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import KnobLevelPlateMark from '../KnobLevelPlateMark/KnobLevelPlateMark';
 
-const KnobPlate909Styles = styled('div')`
+const KnobPlate909Styled = styled('div')`
     width:100px;
     height:100px;
     border-radius:5px;
@@ -27,13 +27,20 @@ class KnobPlate909 extends React.Component {
     });
   }
 
+  getKnobLevelPlateMarks(numberOfMarks){
+    return (
+      [
+        <KnobLevelPlateMark key="uni" rotation={0} top={50} left={10} height={1} width={40} backgroundColor="#55627e" />,
+      ]
+    )
+  }
+
   render(){
     return (
-      <KnobPlate909Styles onMouseMove={this.mouseMove.bind(this)}>
-        <KnobLevelPlateMark rotation={45} top={49} left={31} backgroundColor="#55627e" />
-        <KnobLevelPlateMark rotation={125} top={49} left={71} backgroundColor="#55627e" />
+      <KnobPlate909Styled onMouseMove={this.mouseMove.bind(this)}>
+        {this.getKnobLevelPlateMarks(11)}
         {this.props.children(this.state)}
-      </KnobPlate909Styles>
+      </KnobPlate909Styled>
     );
   }
 }

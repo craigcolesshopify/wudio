@@ -11,6 +11,7 @@ function Knob909(props){
     position:relative;
     left:calc(50% - 25px);
     top:calc(50% - 25px);
+    transform:rotate(${1190 * 4}deg)
   `;
 
   const LevelIndicator = styled('div')`
@@ -21,9 +22,11 @@ function Knob909(props){
     top:24px;
   `
 
-  const {values: {mouseCoordsY}} = props;
+  const {values: {mouseCoordsY}, control, output} = props;
 
   let rotationDeg = mouseCoordsY;
+
+  //console.log(rotationDeg);
 
   if(mouseCoordsY > 1032){
     rotationDeg = 1032
@@ -35,8 +38,10 @@ function Knob909(props){
   }
 
   const rotationStyle = {
-      transform:`rotate(${rotationDeg * 4}deg)`
-    };
+    transform:`rotate(${-rotationDeg * 4}deg)`
+  };
+
+  output(rotationDeg, control);
 
   return (
     <Knob909 style={rotationStyle}>
