@@ -3,6 +3,9 @@
 An exercise in creating a react / babel / koa / webpack app from scratch
 
 ## Blog
+***July 9, 2018***
+Added web audio tone generator, thinking I need to abstract the audio engine out of a React component into it's own plain javascript class.  Used render prop to pass down synth engine methods to control components, but also thinking I this will be easier if I use the context API.
+
 ***July 7, 2018***
 
 Added simple callback mechanism so that each synth component can control independant values in the **soon to be built** audio engine. This establishes a highly modular approach and separates the look and feel from the actual audio generation.
