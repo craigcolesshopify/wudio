@@ -3,6 +3,9 @@ import styled, {css} from 'styled-components';
 
 
 function Knob909(props){
+
+  const {values: {mouseCoordsY}, control, output} = props;
+
   const Knob909 = styled('div')`
     width:50px;
     height:50px;
@@ -22,11 +25,7 @@ function Knob909(props){
     top:24px;
   `
 
-  const {values: {mouseCoordsY}, control, output} = props;
-
   let rotationDeg = mouseCoordsY;
-
-  //console.log(rotationDeg);
 
   if(mouseCoordsY > 1032){
     rotationDeg = 1032

@@ -31,7 +31,7 @@
   "scripts": {
     "clean": "rm -rf ./src/build",
     "babel-node": "babel-node --presets es2015,stage-2",
-    "dev": "nodemon --exec yarn run babel-node -- src/server/index.js | npm run webpack",
+    "dev": "yarn run babel-node -- src/server/index.js | npm run webpack",
     "webpack": "npm run clean && `npm bin`/webpack --mode development --watch",
     "build-server": "babel src -d build --presets es2015,stage-2",
     "serve": "node build/server/index.js"
