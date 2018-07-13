@@ -7,8 +7,6 @@ import {Route} from 'react-router-dom';
 class App extends React.Component {
 
   render () {
-    console.log('this is mounting!!! ');
-
     return (
       <div>
         <Header />
