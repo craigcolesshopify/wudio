@@ -3,6 +3,10 @@
 An exercise in creating a react / babel / koa / webpack app from scratch
 
 ## Blog
+***July 12, 2018***
+
+Solved routing the audio context through the controller components and back to the synth engine. First method was to use render functions to pass the `audioContext` around, which is nice but starts to get messy after only 2 levels of nesting. For the Second method I refactored the render props to use the new `ReactContext API` and it really cleaned up the code and the readability. The `React Context API` is currently in a branch called `with-context-api`. I am going to merge it into `master` soon, as I definatley prefer the `React Context API`  over `render props`.
+
 ***July 9, 2018***
 
 Added web audio tone generator, thinking I need to abstract the audio engine out of a React component into it's own plain javascript class.  Used render prop to pass down synth engine methods to control components, but also thinking this will be easier if I use the context API.
