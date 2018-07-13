@@ -1,4 +1,5 @@
 import React from 'react';
+import SynthContext from '../../contexts/SynthContext/SynthContext';
 
 class SynthEngine extends React.Component {
 
@@ -6,7 +7,7 @@ class SynthEngine extends React.Component {
     super(props);
     this.state = {
       knobOutput: this.knobOutput,
-      context: this
+      synthContext: this
     }
 
   }
@@ -21,6 +22,7 @@ class SynthEngine extends React.Component {
       this.oscillator = this.audioContext.createOscillator();
       this.oscillator.connect(this.audioContext.destination);
       this.oscillator.start();
+      setTimeout(()=>{this.oscillator.stop()},4000);
       this.oscillator.frequency.value = 400;
 
       
@@ -43,8 +45,12 @@ class SynthEngine extends React.Component {
   }
 
   render(){
-    console.log(this);
-    return this.props.children(this.state);
+    
+    return ( 
+      <SynthContext.Provider value={this.state}>
+        {this.props.children}
+      </SynthContext.Provider>
+    )
   }
 }
 

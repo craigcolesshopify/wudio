@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import KnobLevelPlateMark from '../KnobLevelPlateMark/KnobLevelPlateMark';
+import SynthContext from '../../contexts/SynthContext/SynthContext';
 
 const KnobPlate909Styled = styled('div')`
     width:100px;
@@ -37,10 +38,15 @@ class KnobPlate909 extends React.Component {
 
   render(){
     return (
-      <KnobPlate909Styled onMouseMove={this.mouseMove.bind(this)}>
-        {this.getKnobLevelPlateMarks(11)}
-        {this.props.children(this.state)}
-      </KnobPlate909Styled>
+      <SynthContext.Consumer>
+        {({synthContext, knobOutput}) => (
+            <KnobPlate909Styled onMouseMove={this.mouseMove.bind(this)}>
+              {this.getKnobLevelPlateMarks(11)}
+              {this.props.children(this.state, knobOutput, synthContext)}
+            </KnobPlate909Styled>
+          )
+        }
+      </SynthContext.Consumer>
     );
   }
 }

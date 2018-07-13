@@ -10,26 +10,23 @@ function About(){
     <div>
       <h1>ABOUT!!</h1>
       <SynthEngine>
-        {
-          ({knobOutput, context})=>{
-            
-            return (
-              <React.Fragment>
-                <KnobPlate909>
-                  {
-                    (state)=><Knob909 values={state} output={knobOutput} control="envelope" context={context}/>
-                  }
-                </KnobPlate909>
-                <KnobPlate909>
-                  {
-                    (state)=><Knob909 values={state} output={knobOutput} control="cutoff"/>
-                  }
-                </KnobPlate909>
-              </React.Fragment>
-            )
+        <React.Fragment>
+          <KnobPlate909>
+            {
+              (state, knobOutput, synthContext) => (
+                <Knob909 values={state} output={knobOutput} control="envelope" synthContext={synthContext}/>
+              )
+            }
+          </KnobPlate909>
 
-          }
-        }
+          <KnobPlate909>
+            {
+              (state, knobOutput, synthContext) => (
+                <Knob909 values={state} output={knobOutput} control="envelope" synthContext={synthContext}/>
+              )
+            }
+          </KnobPlate909>
+        </React.Fragment>
       </SynthEngine>
     </div>
   )
