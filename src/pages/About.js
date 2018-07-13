@@ -1,7 +1,7 @@
 import React from 'react';
 import SynthEngine from '../components/SynthEngine/SynthEngine';
 import KnobPlate909 from '../components/KnobPlate909/KnobPlate909';
-
+import PrimaryButton909 from '../components/PrimaryButton909/PrimaryButton909';
 import Knob909 from '../components/Knob909/Knob909';
 
 function About(){
@@ -11,6 +11,7 @@ function About(){
       <h1>ABOUT!!</h1>
       <SynthEngine>
         <React.Fragment>
+          <PrimaryButton909 />
           <KnobPlate909>
             {
               (state, knobOutput, synthContext) => (
