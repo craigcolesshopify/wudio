@@ -11,13 +11,13 @@ function About(){
       <h1>ABOUT!!</h1>
       <SynthEngine>
         {
-          ({knobOutput})=>{
+          ({knobOutput, context})=>{
             
             return (
               <React.Fragment>
                 <KnobPlate909>
                   {
-                    (state)=><Knob909 values={state} output={knobOutput} control="envelope"/>
+                    (state)=><Knob909 values={state} output={knobOutput} control="envelope" context={context}/>
                   }
                 </KnobPlate909>
                 <KnobPlate909>

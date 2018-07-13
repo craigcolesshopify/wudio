@@ -5,34 +5,41 @@ class SynthEngine extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      knobOutput: this.knobOutput
+      knobOutput: this.knobOutput,
+      context: this
     }
-    this.setAudioContext();
 
   }
 
   setAudioContext(){
-    
-    window.AudioContext = window.AudioContext||window.webkitAudioContext;
 
     try {
-
+      window.AudioContext = window.AudioContext||window.webkitAudioContext;
       
       this.audioContext = new AudioContext();
 
       this.oscillator = this.audioContext.createOscillator();
       this.oscillator.connect(this.audioContext.destination);
-      //this.oscillator.start();
+      this.oscillator.start();
+      this.oscillator.frequency.value = 400;
+
+      
 
     } catch(e){
       throw new Error('Browser does not support web audio');
     }
   }
 
-  knobOutput(value, control){
-    console.log(value, control);
-    //this.oscillator.frequency.value = value;
-    console.log(this);
+  componentDidMount(){
+    this.setAudioContext();
+  }
+
+  knobOutput(value, control, context){
+    console.log(value, control, context);
+    if(context && context.oscillator){
+      context.oscillator.frequency.value = value;
+    }
+    //console.log(this);
   }
 
   render(){

@@ -4,7 +4,7 @@ import styled, {css} from 'styled-components';
 
 function Knob909(props){
 
-  const {values: {mouseCoordsY}, control, output} = props;
+  const {values: {mouseCoordsY}, control, output, context} = props;
 
   const Knob909 = styled('div')`
     width:50px;
@@ -40,7 +40,7 @@ function Knob909(props){
     transform:`rotate(${-rotationDeg * 4}deg)`
   };
 
-  output(rotationDeg, control);
+  output(rotationDeg, control, context);
 
   return (
     <Knob909 style={rotationStyle}>
